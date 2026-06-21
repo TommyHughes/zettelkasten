@@ -12,9 +12,11 @@ There should be a preference on giving each zettel a readable name, but it is no
 
 Each (typical) zettel requires a short YAML front matter section with the following tags,
 
-type: What type of zettel is this?
-date: The most recent update associated with the notes.
-tags: key words associated with the zettel. Keep tenses simple but don't torture the word to do so.
+**type:** What type of zettel is this?
+
+**date:** The most recent update associated with the notes.
+
+**tags:** key words associated with the zettel. Keep tenses simple but don't torture the word to do so.
 
 These are the only required items for the content of any zettel. Everything else if free-form.
 
