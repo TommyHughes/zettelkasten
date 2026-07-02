@@ -23,3 +23,28 @@ Now prove that the law of the *conservation of energy* holds for quasi-Newtonian
 
 ## Solution
 
+Observe that
+
+$$
+\begin{align*}
+    \frac{dK}{dt} &= \frac{1}{2} \sum_{i=1}^n m_i \frac{d}{dt}[\phi_i'(t)^2] \\
+    &= \sum m_i \phi_i'(t)\phi_i''(t) \\
+    &= \sum F_i(\phi(t)) \phi_i'(t)
+\end{align*}
+$$
+
+and
+
+$$
+\begin{align*}
+    \frac{dP}{dt} &= \langle \nabla V(\phi(t)), \phi'(t) \rangle \\
+    &= \langle -F(\phi(t)), \phi'(t) \rangle \\
+    &= \sum_{i=1}^n -F_i(\phi(t))\phi_i'(t)
+\end{align*}
+$$
+
+so that
+
+$$ \frac{dK}{dt} + \frac{dP}{dt} = \frac{d (K+P)}{dt} = 0 $$
+
+implying $(K+P)(t)$ is a constant. $\blacksquare$
