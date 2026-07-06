@@ -24,5 +24,5 @@ where the equality holds uniquely for $\frac{\nabla f(\mathbf{a})}{\vert \nabla 
 
 - This is just **Cauchy-Schwarz**. That is the reason: "because Cauchy-Schwarz".
 
-- It's not obvious why this implies the description of the theorem. It follows from the fact that $$D_v f(a) = D f(a)(v) = \langle \nabla f(a), v \rangle$$ So maximizing $D_v f(a)$ is tantamount to finding the unit vector $v$ that maximizes $Df(a)(v)$ which is equivalent to the statement of the theorem.
+- It's not obvious why this implies the description of the theorem. It follows from the fact that $$D_v f(a) = D f(a)(v) = \langle \nabla f(a), v \rangle$$ (see [this](./directional_derivative_formula.md) zettel) So maximizing $D_v f(a)$ is tantamount to finding the unit vector $v$ that maximizes $Df(a)(v)$ which is equivalent to the statement of the theorem.
     - We'd want to maximize $D_v f(a)$ since this is finding the direction $v$ that maximizes the rate of change of $f$ at $a$, which is what "points in the direction of fastest increase" is intended to mean.
