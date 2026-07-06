@@ -1,7 +1,7 @@
 ---
 type: exercise
 date: 2026-06-30
-tags: [calculus, analysis, minimization, ]
+tags: [math, calculus, analysis, minimization, ]
 book title: Advanced Calculus of Several Variables
 book author: C. H. Edwards Jr.
 book solution: 2.1.2
