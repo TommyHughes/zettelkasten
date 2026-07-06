@@ -1,7 +1,7 @@
 ---
 type: theorem
 date: 2026-07-06
-tags: [mathematics, theorem, proof, analysis, multivariable calculus, gradient, level curve, orthogonal]
+tags: [mathematics, theorem, proof, analysis, multivariable, calculus, gradient, level set, orthogonal]
 ---
 
 # Theorem: The Gradient is Orthogonal to a Level Set
