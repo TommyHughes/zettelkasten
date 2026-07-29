@@ -76,28 +76,28 @@ $$
 so that we may write
 
 $$
-p(k, t' \vert j) = p(k, t - \Delta t \vert j) = \int p(k, 0 \vert l) p(l, t' \vert j) dl
+p(k, t' \vert j) = p(k, t - \Delta t \vert j) = \sum_l p(k, 0 \vert l) p(l, t' \vert j)
 $$
 
 Taken within the context of the CK we can substract and divide to get
 
 $$
 \begin{align*}
-\frac{p(k, t \vert j) - p(k, t-\Delta t \vert j)}{\Delta t} &= \frac{\int p(k, \Delta t \vert l) p(l, t - \Delta t \vert j)dl - \int p(k, 0 \vert l) p(l, t - \Delta t \vert j) dl}{\Delta t} \\
-&= \frac{\int p(l, t - \Delta t \vert j) \left( p(k, \Delta t \vert l) - p(k, 0 \vert l) \right) dl}{\Delta t} 
+\frac{p(k, t \vert j) - p(k, t-\Delta t \vert j)}{\Delta t} &= \frac{\sum_l p(k, \Delta t \vert l) p(l, t - \Delta t \vert j) - \sum_l p(k, 0 \vert l) p(l, t - \Delta t \vert j)}{\Delta t} \\
+&= \frac{\sum_l p(l, t - \Delta t \vert j) \left( p(k, \Delta t \vert l) - p(k, 0 \vert l) \right)}{\Delta t} 
 \end{align*}
 $$
 
-If we take the limit of both sides, and assume we can exchange the order of the limits (move the limit into the integral) on the right-hand side, we obtain
+If we take the limit of both sides, and assume we can exchange the order of the limits (move the limit into the sum) on the right-hand side, we obtain
 
 $$
-\frac{\partial p}{\partial t} (k, t \vert j) = \int \lim_{\Delta t \rightarrow 0} p(l, t - \Delta t \vert j)\frac{p(k, \Delta t \vert l) - p(k, 0 \vert l)}{\Delta t} = \int p(l,t \vert j) p'(k, 0 \vert l)dl
+\frac{\partial p}{\partial t} (k, t \vert j) = \sum_l \lim_{\Delta t \rightarrow 0} p(l, t - \Delta t \vert j)\frac{p(k, \Delta t \vert l) - p(k, 0 \vert l)}{\Delta t} = \sum_l p(l,t \vert j) p'(k, 0 \vert l)
 $$
 
 If we denote $p'(k, 0 \vert l) = w_{kl}$ then the above becomes
 
 $$
-\frac{\partial p}{\partial t} (k, t \vert j) = \int p(l,t \vert j) w_{kl} dl
+\frac{\partial p}{\partial t} (k, t \vert j) = \sum_l p(l,t \vert j) w_{kl}
 $$
 
 This is called the **Forward Evolution Equation** (FEE) or the **Master Equation** (ME).
