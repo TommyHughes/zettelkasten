@@ -33,7 +33,7 @@ $$p(j_n, t_n ; j_{n-1}, t_{n-1}; \ldots ; j_1, t_1)$$
 
 which is the probability that we get $j_1$ at time $t_1$ and $j_2$ at time $t_2$ and so on, where $t_1 < t_2 < \ldots < t_n$.
 
-Obviously the class of all stochastic processes is far too general to and complex for us to approach in useful application and so we find it necessary to begin by narrowing our exploration to a much smaller and simpler collection of stochastic processes. That is, we'll start by looking at stochastic processes with *short memories*. That is
+Obviously the class of all stochastic processes is far too general and complex for us to approach in useful application and so we find it necessary to begin by narrowing our exploration to a much smaller and simpler collection of stochastic processes. That is, we'll start by looking at stochastic processes with *short memories*. That is
 
 $$p(j_n, t_n \vert j_{n-1}, t_{n-1}; \ldots; j_1, t_1) = p(j_n, t_n \vert j_{n-1}, t_{n-1})$$
 
@@ -101,3 +101,57 @@ $$
 $$
 
 This is called the **Forward Evolution Equation** (FEE) or the **Master Equation** (ME).
+
+This equation can be rewritten:
+
+$$
+\frac{\partial p}{\partial t} (k, t \vert j) = \sum_{l \neq k} p(l,t \vert j) w_{kl} + w_{kk} p(k, t \vert j)
+$$
+
+Now observe that $p(k) + p(l\neq k) = 1$ for all $t$. That is, it is constant with respect to $t$. Thus the derivative with respect to $t$ is given by $p'(k, 0 \vert k) + p'(l \neq k, 0 \vert k) = w_{kk} + \sum_{l \neq k}w_{lk}$. Thus we have
+
+$$
+0 = w_{kk} + \sum_{l \neq k} w_{lk}
+$$
+
+implying
+
+$$
+w_{kk} = - \sum_{l \neq k} w_{lk}
+$$
+
+so that the above becomes
+
+$$
+\frac{\partial p}{\partial t} (k, t \vert j) = \sum_{l \neq k} \underbrace{w_{kl}p(l,t \vert j)}_{\text{gain term}} - \underbrace{w_{lk} p(k, t \vert j)}_{\text{loss term}}
+$$
+
+In fact, we can express this equation as a matrix equation in the following way. Suppose our state space is finite and discrete. That is $\vert S \vert = n$. Then we may write
+
+$$\mathbf{\mathbf{P}}(t) = \begin{bmatrix} p(1) \\ p(2) \\ \vdots \\ p(n) \end{bmatrix}$$
+
+which is just a vector of the probabilities for each state in the state space at time $t$. Then, if we suppress the conditional $\vert j$ notation in the interest of generality, we get
+
+$$\frac{\partial \mathbf{P}}{\partial t}(t) = W \mathbf{P}(t)$$
+
+where $\left[ W \right]_{ij} = w_{ij} = w(i \vert j)$. 
+
+Since $p(k, 0 \vert j)$ is an indicator function, then for $j$ given we will have
+
+$$\left[ \mathbf{P}(0) \right]_k = \begin{cases} 1 & ,k=j \\ 0 &,\text{otherwise}  \end{cases}$$
+
+That is
+
+$$\mathbf{P}(0) = \begin{bmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{bmatrix} = \mathbf{e}_j$$
+
+Thus, with the initial value $\mathbf{P}(0)$, we can find a solution to this equation in the form of an exponential:
+
+$$\mathbf{P}(t) = e^{Wt}\mathbf{P}(0) $$
+
+## Comments
+- You can think of the $w_{kl}$ as density values. Just as with a probability density, $f(x)$, $w_{kl}$ does not give you probabilities but $\int_a^b w_{kl}dt$ will.
+
+# Lecture 7: Markov Processes (P1)
+
+[YouTube](https://youtu.be/l4FKjOfF8qs?si=yr6mdgpHdB9wof-n)
+
