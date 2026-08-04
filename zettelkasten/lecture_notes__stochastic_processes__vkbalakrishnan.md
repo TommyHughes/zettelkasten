@@ -149,7 +149,6 @@ Thus, with the initial value $\mathbf{P}(0)$, we can find a solution to this equ
 $$\mathbf{P}(t) = e^{Wt}\mathbf{P}(0) $$
 
 ## Comments
-- You can think of the $w_{kl}$ as density values. Just as with a probability density, $f(x)$, $w_{kl}$ does not give you probabilities but $\int_a^b w_{kl}dt$ will.
 
 # Lecture 7: Markov Processes (P1)
 
