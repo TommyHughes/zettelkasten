@@ -49,7 +49,7 @@ To make our initial exploration even simpler we'll also impose a further restric
 
 $$p(j, t_j \vert k, t_k) = p(j, t_j - t_k \vert k , 0) = p(j, \Delta t \vert k)$$
 
-What this means is that the probabilistic features/distribution of the system are not changing with time; "the randomness is not aging". For this reason, it does not matter where you start (here at $t_k$) all that matters is the elapsed time $t_j - t_k = \Delta t$. Such processes are called **stationary processes**.
+What this means is that the probabilistic features/distribution of the system are not changing with time; "the randomness is not aging". For this reason, it does not matter where you start (here at $t_k$) all that matters is the elapsed time $t_j - t_k = \Delta t$. Such processes are called **stationary processes**. Note chat is saying that this is technically not true, stationarity is related but not the same. Instead these are called **time homogeneous** processes.
 
 An important tool used for handling such processes is known as the **Chapman-Kolmogorov equation** (CK) which is given by
 
