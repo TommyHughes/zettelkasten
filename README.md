@@ -21,3 +21,11 @@ Each (typical) zettel requires a short YAML front matter section with the follow
 These are the only required items for the content of any zettel. Everything else if free-form.
 
 While the three tags included above are required, additional tags can be added when it's deemed appropriate. Front matter YAML is extensible.
+
+### File Naming Conventions
+
+There are no strict requirements for file names, but below includes a list of how typical cases might be handled.
+
+- Exercises from a Textbook
+    - `title_acronym`_`lastinitial`_`ex`_`number`.md
+        - For example "Advanced Calculus of Several Variables" by C.H. Edwards Jr. Exercise 2.1.1 would be titled `acsv_e_ex_2_1_1.md`
