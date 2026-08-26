@@ -74,6 +74,138 @@ do too. By definition of a sentence (iv), that exhausts all cases.
 
 $\square$
 
-## Part 3:  Model Theory for Propositional Logic
+# Part 3:  Model Theory for Propositional Logic
 [reference](https://www.youtube.com/watch?v=FTM3sgteZs4&list=PLVjjsDYdCTMTBGgesCNEcrmy3JFJjz_Mt&index=4)
 
+The basic idea is **models are possible worlds**. Take a very simple example where
+
+$$\mathcal{S} = \{ p, q \}$$
+
+A sentence like $p \rightarrow q$ can be either true or false depending on the values of $p$ and $q$. In other words, **in some possible worlds the sentence is true, and in other possible worlds, it's false**.
+
+---
+
+A `model`, $A$, for sentence symbols $\mathcal{S}$ simply is $A \subseteq \mathcal{S}$.
+
+---
+
+Intuitively, we hope this will result in something like
+
+$$
+\begin{align*}
+p \in A &\text{ means } p = \top \\
+p \not\in A &\text{ means } p = \bot
+\end{align*}
+$$
+
+Later we'll want to expand from expecting models being able to simply tell us which senteces are true to being able to "exhibit an object in which those sentences are true".
+
+## Truth in a Model
+
+---
+
+For a sentence $\phi$ and model $A$, we write
+
+$$A \models \phi$$
+
+which can be read "$A$ models $\phi$" or "$A$ is a model of $\phi$". It is defined as follows:
+
+(i) If $\phi = p \in \mathcal{S}$ then $A \models \phi$ iff $p \in A$.
+
+(ii) If $\phi = \lnot \psi$ for a sentence $\psi$ then $A \models \phi$ iff $A \not\models \psi$.
+
+(iii) If $\phi = \psi \land \pi$ then $A \models \phi$ iff $A \models \psi$ and $A \models \pi$
+
+---
+
+We'll utilize simplfying notation and say that
+
+$$\models \phi$$
+
+if for every model $A$
+
+$$A \models \phi$$
+
+Equivalently, we'll say $\phi$ is `valid`. As an example of a valid sentence we have
+
+$$\phi = \lnot p \lor p$$
+
+# Part 4: Completeness Theorem for Prop Logic
+[reference](https://www.youtube.com/watch?v=wPEHYTEPWuw&list=PLVjjsDYdCTMTBGgesCNEcrmy3JFJjz_Mt&index=5)
+
+Our goals for this section will be to
+
+1. Build a method for determining the `validity` of statements.
+
+1. Show this method is correct.
+
+As a motivating example to build our intuition consider
+
+$$\mathcal{S} = \{ x_1, \ldots, x_n, \ldots \}$$
+
+How do we know
+
+$$ x_1 \lor \lnot x_1 $$
+
+is valid? We'd need to show this is true in all models of $\mathcal{S}$. However, in this case there are infinitely many models of $\mathcal{S}$ since $\mathcal{S}$ is infinite. This means we can't actually go through each model and check.
+
+---
+
+Considering $\mathcal{S} = \{ x_1, x_2, \ldots \}$ An `assignment` is a sequence 
+
+$$\alpha_1, \alpha_2, \ldots$$
+
+where $\alpha_i = \mathbb{T}$ or $\alpha_i = \mathbb{F}$
+
+---
+
+Intuitively we are determining which sentence symbols are true and which are false.
+
+---
+
+The `value` of $\phi$ given some assignment $\alpha_1, \ldots, \alpha_n$ is
+
+(i) If $\phi = x_i \in \mathcal{S}$, the value of $\phi$ is $\alpha_i$.
+
+(ii) If $\phi = \lnot \psi$ the value of $\phi$ is the opposite of $\psi$.
+
+(iii) If $\phi = \psi \land \pi$ the value of $\phi$ is true only when the value of $\psi$ and the value of $\pi$ are true.
+
+---
+
+To try to help illustrate the distinction within the related concepts we've discussed we summarize in the table.
+
+| Syntax | Model | Value |
+|-|-|-|
+| Is $\phi$ even a sentence? | Is $\phi$ true in a model? | Can we can compute validity |
+
+A further note of clarification: you might have noticed assignment works finitely: $\alpha_1, \ldots, \alpha_n$ whereas Models could be infinite. Recall though that a sentence $\phi$ is necessarily finite (see above) and therefore only requires a finite assignment to compute its value.
+
+Gemini added another summary included in the table below:
+
+| Property | Formula | Intuition |
+|-|-|-|
+| Soundness | $\Gamma \vdash \phi \rightarrow \Gamma \models \phi$ | If my proof system can derive it, is it actually true in the real world? Our proof rules don't produce false garbage. |
+| Completeness | $\Gamma \models \phi \rightarrow \Gamma \vdash \phi $ | If something is universally true in every possible world, is our proof system strong enough to find a proof for it. |
+
+---
+
+We say
+
+$$\vdash \phi$$
+
+if for all assignments $\alpha_1, \ldots, \alpha_n$ the value of $\phi$ is true. Equivalently, we say $\phi$ is a `tautology`.
+
+---
+
+## The Completeness Theorem (or at least part of it)
+
+**Theorem**
+
+$$\vdash \phi \text{ iff } \models \phi$$
+
+---
+
+**Proof Idea**
+
+I didn't watch but I suspect the basic idea is $\phi$ is always finite and so even if $A$ is infinite, $\phi$ is always a finite subset of $A$ and then it proceeds exactly like you'd expect.
