@@ -26,7 +26,7 @@ $$
 \lim_{n \rightarrow \infty} \mathbb{P} \left( \left\vert \sum_{i=0}^{n-1} \Delta W_i^2 - (t-s) \right\vert \geq \epsilon \right) = 0
 $$
 
-Since $W_t$ is a Weiner process, it follows that
+Since $W_t$ is a Wiener process, it follows that
 
 $$\Delta W_i^2 = \left(\frac{t-s}{n}\right) Z^2 = \left(\frac{t-s}{n}\right) \chi_{1}^2$$
 
@@ -53,3 +53,5 @@ $\blacksquare$
 ## Comments
 
 - If we set $s=0$ then $t-s = t$ is just the total time the wiener process has had to evolve. Then this theorem is saying if you sum up the squared differences of infinitesimal segments within that duration, you get back that total duration; you get back the time variable. Letting $s \neq 0$ is just an affine transformation; it moves the origin somewhere else.
+
+- This theorem has the following notational shorthand / mnemonic associated with it: $$\left( dW_t \right)^2 = dt$$
