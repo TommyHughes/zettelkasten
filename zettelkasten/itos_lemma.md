@@ -46,7 +46,7 @@ $$
 Should the limit on the right exist, then we have
 
 $$
-f(W_t) - f(W_s) = \int_s^t f'(W_u) dW_u + \frac{1}{2} \int_s^t f''(W_u)dW_u^2
+f(W_t) - f(W_s) = \int_s^t f'(W_u) dW_u + \frac{1}{2} \int_s^t f''(W_u)\left(dW_u\right)^2
 $$
 
 Again, by Quadratic variation, we have the notational shorthand
@@ -58,9 +58,10 @@ $$
 so that we get **Ito's Lemma:**
 
 $$
-f(W_t) - f(W_s) = \int_s^t f'(W_u) dW_u + \frac{1}{2} \int_s^t f''(W_u)dt
+f(W_t) - f(W_s) = \int_s^t f'(W_u) dW_u + \frac{1}{2} \int_s^t f''(W_u)du
 $$
 
 ## Comments
 
 - Using Quadratic Variation to explain why we need to keep the $f''$ term has left me wondering why we don't exclude the $f'$ term. TODO.
+    - TODO: actually we haven't really shown that the weighted sums will vanish so we need to do that too.
