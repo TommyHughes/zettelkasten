@@ -28,4 +28,4 @@ Now, I want to suggest, they might have their own brand of materialism as well.
 
 INSERT: [16:42 - 17:50](https://youtu.be/p5ZevvpijP4?si=u6EBLQ8HRUZpF7bm&t=1003)
 
-By "Boomer Materialism" I mean something like an attitude that allows someone to assert the correctness of materialism and reject any manner of objection with refusal to recognize the issue and an appeal to the bare assertion that the issue is nothing more than a problem with the perspective of the person who posed it, and that they should just change their mind about it.
+By "Boomer Materialism" I mean something like an attitude that allows someone to assert the correctness of materialism and reject any manner of objection, and insist that critics just change their mind about it.
