@@ -6,3 +6,9 @@ tags: [jay garfield, scribbles, consciousness, mind body problem]
 
 # Jay Garfield is Wrong about Consciousness
 
+## Script
+
+
+## Notes
+
+> “”
